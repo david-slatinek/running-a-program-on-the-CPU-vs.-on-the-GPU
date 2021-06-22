@@ -67,3 +67,4 @@ if __name__ == "__main__":
         time_results[i] = end
 
     write_to_file("gpu", time_results)
+

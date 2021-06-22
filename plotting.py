@@ -30,4 +30,5 @@ if __name__ == "__main__":
 
     # Show legend and plot.
     plt.legend()
-    plt.show()
+    plt.savefig("image.jpg")
+
