@@ -4,14 +4,14 @@ from numba import jit
 from timeit import default_timer as timer
 
 # Constant, used in the formula.
-# Defined here to speed up the calculation, i. e. it's calculated only once
+# Defined here to speed up the calculation, i.e. it's calculated only once
 # and then placed in the formula.
 SQRT_2PI = np.float32(np.sqrt(2 * np.pi))
 
 
 # This function will run on the CPU.
 def gaussian_cpu(values, mean, sigma):
-    """Calculates values of the Gaussian function.
+    """Calculate values of the Gaussian function.
 
     :param values: list, function input parameters.
     :param mean: float, arithmetic mean.
@@ -29,7 +29,7 @@ gaussian_gpu = jit(gaussian_cpu)
 
 
 def write_to_file(name, values):
-    """Writes results to a file.
+    """Write results to a file.
 
     :param name: string, file name, only prefix.
     :param values: dictionary, values to write.
