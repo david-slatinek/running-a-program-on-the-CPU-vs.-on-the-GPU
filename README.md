@@ -13,7 +13,7 @@ Clone the project or download as a zip and then unzip it.
 
 ## 1. Run with docker
 You can leave default parameters for **main.py** or you can change the parameters size and the number of rounds:
-```
+```python
 # Randomly generated values.
 x = np.random.uniform(-3, 3, size=1000000).astype(np.float32)
 
@@ -40,12 +40,12 @@ docker container rm cpu_gpu_container_main
 \
 \
 For **plotting.py** you can leave the default parameters or you can change CPU or GPU execution time - read values from *cpu.json* or *gpu.json*:
-```
+```python
 cpu_time = np.array([4.61113, 44.97076, 92.44827])
 gpu_time = np.array([0.03926, 0.39649, 0.80460])
 ```
 You can also change values for prediction:
-```
+```python
 x_predict = np.arange(30000000, 510000000, 10000000).reshape((-1, 1))
 ```
 
@@ -89,12 +89,12 @@ Following that, you have to use *docker cp* to get files to the host machine.
 
 ## 2. Run with pip
 Create a virtual environment and run
-```
+```python
 pip install -r requirements_main.txt
 ```
 for **main.py**
 or
-```
+```python
 pip install -r requirements_plotting.txt
 ```
 for **plotting.py**.
