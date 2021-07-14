@@ -22,19 +22,19 @@ n = 1
 ```
 
 Now, run the following commands:
-```
+```bash
 docker image build -t cpu_gpu_main .
 docker container run -d --name cpu_gpu_container_main cpu_gpu_main
 ```
 After the container stops - check with *docker container ls -a* -, run the following:
-```
+```bash
 docker container cp cpu_gpu_container_main:app/cpu.json cpu.json
 docker container cp cpu_gpu_container_main:app/gpu.json gpu.json
 ```
 You get two files: *cpu.json* and *gpu.json*, which contain results for execution time.
 \
 You can delete the container by running:
-```
+```bash
 docker container rm cpu_gpu_container_main
 ```
 \
@@ -50,19 +50,19 @@ x_predict = np.arange(30000000, 510000000, 10000000).reshape((-1, 1))
 ```
 
 Afterward, run the following:
-```
+```bash
 docker image build -t cpu_gpu_plot -f Dockerfile.m .
 docker container run -d --name cpu_gpu_container_plot cpu_gpu_plot
 ```
 When the container stops - check with *docker container ls -a* -, run the following command:
-```
+```bash
 docker container cp cpu_gpu_container_plot:app/image.jpg image.jpg
 ```
 You get *image.jpg* that presents the result of a linear regression model.
 \
 \
 You can delete the container by running:
-```
+```bash
 docker container rm cpu_gpu_container_plot
 ```
 
@@ -70,13 +70,13 @@ docker container rm cpu_gpu_container_plot
 Instead of running the container in the background, you can connect to it and manually run python files.
 \
 For **main.py** use:
-```
+```bash
 docker image build -t cpu_gpu_main .
 docker container run -it --name cpu_gpu_container_main cpu_gpu_main bash
 python3 main.py
 ```
 and for **plotting.py** use:
-```
+```bash
 docker image build -t cpu_gpu_plot -f Dockerfile.m .
 docker container run -it --name cpu_gpu_container_plot cpu_gpu_plot bash
 python3 plotting.py
@@ -100,11 +100,11 @@ pip install -r requirements_plotting.txt
 for **plotting.py**.
 \
 Now run
-```
+```bash
 python3 main.py
 ```
 or
-```
+```bash
 python3 plotting.py
 ```
 respectively.
