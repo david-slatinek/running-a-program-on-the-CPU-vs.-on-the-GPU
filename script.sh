@@ -9,8 +9,6 @@ docker container rm cpu_gpu_container_main
 docker container run -it --name cpu_gpu_container_main cpu_gpu_main bash
 python3 main.py
 
-
-
 docker image build -t cpu_gpu_plot -f Dockerfile.m .
 
 docker container run -d --name cpu_gpu_container_plot cpu_gpu_plot
